@@ -157,6 +157,8 @@ Cox Proportional Hazards (Cox-PH):
 
     Hazard Ratio (HR): HR = exp(β̂)
 
+## Package Implementations
+
 ## Library / Function Name
 
 ### SAS (LIFETEST)
