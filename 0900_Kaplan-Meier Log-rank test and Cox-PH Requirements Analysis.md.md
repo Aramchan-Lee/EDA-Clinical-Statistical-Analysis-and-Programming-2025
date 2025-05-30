@@ -348,8 +348,11 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 **Notes and SOPs**
 
-  - UCLA SAS Survival Seminar: https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
+  - UCLA SAS Survival Seminar
+    - https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
 
-  - UC Davis Cox Model Presentation: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/cph-model-presentation.pdf
+  - UC Davis Cox Model Presentation
+    - https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/cph-model-presentation.pdf
 
-  - FDA ICH E9 Statistical Principles: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9-statistical-principles-clinical-trials
+  - FDA ICH E9 Statistical Principles
+    - https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9-statistical-principles-clinical-trials
