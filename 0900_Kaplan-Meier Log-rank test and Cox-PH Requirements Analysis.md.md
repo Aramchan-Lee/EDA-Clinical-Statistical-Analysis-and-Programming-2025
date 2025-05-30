@@ -57,7 +57,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   
 ## Assumptions
 
-**Kaplan-Meier (KM)**
+<ins>**Kaplan-Meier (KM)**</ins>
 
     Independent censoring: Censored subjects are assumed to have the same survival prospects as those who remain under observation.
 
@@ -67,7 +67,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
     Random sampling: Subjects are representative of the population of interest.
 
-**Log-Rank Test**
+<ins>**Log-Rank Test**</ins>
 
     Proportional hazards: Hazard ratios between groups are constant over time.
 
@@ -77,7 +77,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
     Correct group assignment: Every individual belongs to one (and only one) group.
 
-**Cox Proportional Hazards (Cox-PH)**
+<ins>**Cox Proportional Hazards (Cox-PH)**</ins>
 
     Proportional hazards: The hazard ratio between individuals is constant over time.
 
@@ -91,7 +91,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 ## Test Statistic & P-value
 
-**Kaplan-Meier (KM):**
+<ins>**Kaplan-Meier (KM):**</ins>
 
   The Kaplan-Meier survival estimate at time t is:
 
@@ -107,7 +107,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
       Var[S(t)] ≈ S(t)² × sum over tᵢ ≤ t of [dᵢ / (nᵢ × (nᵢ - dᵢ))]
 
-**Log-rank Test:**
+<ins>**Log-rank Test:**</ins>
 
   The test statistic is:
 
@@ -123,7 +123,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
     Q follows a chi-squared distribution with degrees of freedom = (number of groups - 1)
 
-**Cox Proportional Hazards (Cox-PH):**
+<ins>**Cox Proportional Hazards (Cox-PH):**</ins>
 
   The partial likelihood for estimating regression coefficients:
 
@@ -148,7 +148,6 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 # Package Implementations
 
 ## SAS (lifetest)
-SAS (lifetest)
   Function/Procedure 
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
   
@@ -193,7 +192,6 @@ SAS (lifetest)
     Limited support for custom baseline hazard specification.
 
 ## SAS (PHREG)    
-SAS (PHREG)
 
   Function/Procedure
     - Use PROC PHREG from the SAS STAT module for Cox Proportional Hazards modeling.
@@ -241,7 +239,6 @@ SAS (PHREG)
     Graphical outputs depend on enabling ODS graphics manually.
   
 ## R (SURVIVAL)
-R (SURVIVAL)
 
   Function/Procedure 
     - Use survfit(), survdiff(), and coxph() from the survival package.
@@ -282,7 +279,6 @@ R (SURVIVAL)
     Formulas can become complex when many interactions or strata are involved.
   
 ## Python (LIFELINES)
-Python (LIFELINES)
 
   Function/Procedure
     - Use KaplanMeierFitter, logrank_test, and CoxPHFitter from the lifelines package.
