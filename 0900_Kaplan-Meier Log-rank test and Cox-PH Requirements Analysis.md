@@ -41,49 +41,49 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 <ins>**Log-rank test:**</ins>
 
-    H₀: Survival functions are equal across groups.
+  - H₀: Survival functions are equal across groups.
 
-    H₁: At least one group differs.
+  - H₁: At least one group differs.
 
 <ins>**Cox-PH:**</ins>
 
-    H₀: Hazard ratio for each covariate = 1 (no effect).
+  - H₀: Hazard ratio for each covariate = 1 (no effect).
 
-    H₁: At least one covariate has HR ≠ 1.
+  - H₁: At least one covariate has HR ≠ 1.
   
 ## Assumptions
 
 <ins>**Kaplan-Meier (KM)**</ins>
 
-    Independent censoring: Censored subjects are assumed to have the same survival prospects as those who remain under observation.
+  - Independent censoring: Censored subjects are assumed to have the same survival prospects as those who remain under observation.
 
-    Non-informative censoring: Censoring is unrelated to the event risk.
+  - Non-informative censoring: Censoring is unrelated to the event risk.
 
-    Exact event times: Event times are known and measured without error.
+  - Exact event times: Event times are known and measured without error.
 
-    Random sampling: Subjects are representative of the population of interest.
+  - Random sampling: Subjects are representative of the population of interest.
 
 <ins>**Log-Rank Test**</ins>
 
-    Proportional hazards: Hazard ratios between groups are constant over time.
+  - Proportional hazards: Hazard ratios between groups are constant over time.
 
-    Independent censoring: Same as in KM.
+  - Independent censoring: Same as in KM.
   
-    Independent survival times: Between individuals and across groups.
+  - Independent survival times: Between individuals and across groups.
 
-    Correct group assignment: Every individual belongs to one (and only one) group.
+  - Correct group assignment: Every individual belongs to one (and only one) group.
 
 <ins>**Cox Proportional Hazards (Cox-PH)**</ins>
 
-    Proportional hazards: The hazard ratio between individuals is constant over time.
+  - Proportional hazards: The hazard ratio between individuals is constant over time.
 
-    Linearity of covariates in log-hazard: The effect of continuous variables is linear on the log hazard scale.
+  - Linearity of covariates in log-hazard: The effect of continuous variables is linear on the log hazard scale.
 
-    Independent survival times: Survival times are independent between individuals.
+  - Independent survival times: Survival times are independent between individuals.
 
-    Independent censoring: Censoring is unrelated to survival probability.
+  - Independent censoring: Censoring is unrelated to survival probability.
 
-    No omitted confounders: All relevant predictors are included in the model (not formally testable but crucial for valid inference).
+  - No omitted confounders: All relevant predictors are included in the model (not formally testable but crucial for valid inference).
 
 ## Test Statistic & P-value
 
