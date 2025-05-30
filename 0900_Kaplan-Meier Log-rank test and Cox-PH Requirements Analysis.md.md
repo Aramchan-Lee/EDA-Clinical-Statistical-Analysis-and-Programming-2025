@@ -39,7 +39,7 @@
 ---
 
 
-## Background
+# Background
 
 Survival analysis encompasses a set of statistical methods designed to analyze time-to-event data—where the outcome is the time until the occurrence of an event of interest, such as death, relapse, equipment failure, or recovery. These methods are uniquely capable of handling censored data, which occurs when the event has not been observed for all subjects during the observation period.
 
@@ -157,11 +157,9 @@ Cox Proportional Hazards (Cox-PH):
 
     Hazard Ratio (HR): HR = exp(β̂)
 
-## Package Implementations
+# Package Implementations
 
-## Library / Function Name
-
-### SAS (LIFETEST)
+## SAS (LIFETEST)
 SAS (LIFETEST)
   Function/Procedure 
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
@@ -189,7 +187,7 @@ SAS (LIFETEST)
   
     Median survival & CI
 
-#### SAS-LIFETEST (procedure)
+### SAS-LIFETEST (procedure)
   ```sas
   proc lifetest data=study plots=survival;
     time time*status(0);
@@ -197,7 +195,7 @@ SAS (LIFETEST)
   run;
   ```
 
-#### SAS-LIFETEST (limitations)
+### SAS-LIFETEST (limitations)
   No built-in test for proportional hazards; requires user-driven diagnostic procedures.
 
   Default method for handling ties is Efron's, which differs from some R/Python defaults.
@@ -206,7 +204,7 @@ SAS (LIFETEST)
 
   Limited support for custom baseline hazard specification.
 
-### SAS (PHREG)    
+## SAS (PHREG)    
 SAS (PHREG)
 
   Function/Procedure
@@ -239,14 +237,14 @@ SAS (PHREG)
   
     Diagnostic outputs (residuals, influence stats)
     
-#### SAS-PHREG (procedure)
+### SAS-PHREG (procedure)
   ```sas
     proc phreg data=study;
       model time*status(0) = age sex treatment;
     run;
   ```
 
-#### SAS-PHREG (limitations)  
+### SAS-PHREG (limitations)  
   
   Cannot incorporate covariates—limited to stratified or grouped comparisons.
   
@@ -254,7 +252,7 @@ SAS (PHREG)
   
   Graphical outputs depend on enabling ODS graphics manually.
   
-### R (SURVIVAL)
+## R (SURVIVAL)
 R (SURVIVAL)
 
   Function/Procedure 
@@ -279,7 +277,7 @@ R (SURVIVAL)
   
     coxph: HRs, CIs, test stats
     
-#### R-SURVIVAL (procedure)
+### R-SURVIVAL (procedure)
   ```r
   library(survival)
   fit_km <- survfit(Surv(time, status) ~ group, data = df)
@@ -287,7 +285,7 @@ R (SURVIVAL)
   fit_cox <- coxph(Surv(time, status) ~ age + treatment, data = df)
   summary(fit_cox)
   ```
-#### R-SURVIVAL (limitations)
+### R-SURVIVAL (limitations)
 
   Diagnostics (e.g., proportional hazards via cox.zph) must be explicitly run and interpreted.
   
@@ -295,7 +293,7 @@ R (SURVIVAL)
   
   Formulas can become complex when many interactions or strata are involved.
   
-### Python (LIFELINES)
+## Python (LIFELINES)
 Python (LIFELINES)
 
   Function/Procedure
@@ -320,7 +318,7 @@ Python (LIFELINES)
   
     HRs, standard errors, confidence intervals
 
-#### Python-LIFELINES (procedure)
+### Python-LIFELINES (procedure)
   ```python
   from lifelines import KaplanMeierFitter, CoxPHFitter
   from lifelines.statistics import logrank_test
@@ -336,7 +334,7 @@ Python (LIFELINES)
   cph.print_summary()
   ```
   
-#### Python-LIFELINES (limitations)
+### Python-LIFELINES (limitations)
 
   Assumption checking (e.g., proportional hazards) must be performed via .check_assumptions(); not automatic.
   
@@ -346,11 +344,11 @@ Python (LIFELINES)
   
   Some plotting features require knowledge of Matplotlib.
 
-## Summary
+# Summary
 
 Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
 
-## References
+# References
 
 Regulatory and Industry References
 
