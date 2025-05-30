@@ -148,27 +148,27 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
   
   Inputs 
-    Required:
+  Required:
   
-      DATA= (input dataset), wide format
+  - DATA= (input dataset), wide format
   
-      TIME statement for survival time and censoring
+  - TIME statement for survival time and censoring
   
-    Optional:
+  Optional:
   
-      STRATA= (for group comparison)
+  - STRATA= (for group comparison)
   
-      PLOTS= (e.g. survival)
+  - PLOTS= (e.g. survival)
   
-      TEST (equality test)
+  - TEST (equality test)
   
   Outputs 
   
-    Kaplan-Meier curves
+  - Kaplan-Meier curves
   
-    Log-rank test statistic & p-value
+  - Log-rank test statistic & p-value
   
-    Median survival & CI
+  - Median survival & CI
 
 ### SAS-lifetest (procedure)
   ```sas
@@ -179,13 +179,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   ```
 
 ### SAS-lifetest (limitations)
-    No built-in test for proportional hazards; requires user-driven diagnostic procedures.
+  - No built-in test for proportional hazards; requires user-driven diagnostic procedures.
 
-    Default method for handling ties is Efron's, which differs from some R/Python defaults.
+  - Default method for handling ties is Efron's, which differs from some R/Python defaults.
 
-    Cannot handle time-varying covariates without macro extensions.
+  - Cannot handle time-varying covariates without macro extensions.
 
-    Limited support for custom baseline hazard specification.
+  - Limited support for custom baseline hazard specification.
 
 ## SAS (PHREG)    
 
@@ -193,31 +193,31 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
     - Use PROC PHREG from the SAS STAT module for Cox Proportional Hazards modeling.
   
   Inputs 
-    Required:
+  Required:
   
-      DATA= (input dataset), wide format
+  - DATA= (input dataset), wide format
   
-      MODEL (time and censoring indicator, covariates)
+  - MODEL (time and censoring indicator, covariates)
   
-    Optional:
+  Optional:
   
-      CLASS= (categorical predictors)
+  - CLASS= (categorical predictors)
   
-      STRATA= (stratify baseline hazards)
+  - STRATA= (stratify baseline hazards)
   
-      HAZARDRATIO= (requests hazard ratios)
+  - HAZARDRATIO= (requests hazard ratios)
   
-      ID= (subject identifier)
+  - ID= (subject identifier)
   
   Outputs
   
-    Hazard ratios (HR)
+  - Hazard ratios (HR)
   
-    Standard errors and confidence intervals
+  - Standard errors and confidence intervals
   
-    Wald test, LRT statistics
+  - Wald test, LRT statistics
   
-    Diagnostic outputs (residuals, influence stats)
+  - Diagnostic outputs (residuals, influence stats)
     
 ### SAS-PHREG (procedure)
   ```sas
@@ -228,11 +228,11 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 ### SAS-PHREG (limitations)  
   
-    Cannot incorporate covariates—limited to stratified or grouped comparisons.
+  - Cannot incorporate covariates—limited to stratified or grouped comparisons.
   
-    Output can be verbose and require manual post-processing for reporting.
+  - Output can be verbose and require manual post-processing for reporting.
   
-    Graphical outputs depend on enabling ODS graphics manually.
+  - Graphical outputs depend on enabling ODS graphics manually.
   
 ## R (SURVIVAL)
 
@@ -240,23 +240,23 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
     - Use survfit(), survdiff(), and coxph() from the survival package.
   
   Inputs
-    Required:
+  Required:
   
-      Surv(time, status) object
+  - Surv(time, status) object
   
-      Formula input for groups/covariates
+  - Formula input for groups/covariates
   
-      Optional:
+  Optional:
   
-      cluster, weights, ties, na.action
+  - cluster, weights, ties, na.action
   
   Outputs 
   
-    survfit: KM estimates
+  - survfit: KM estimates
   
-    survdiff: log-rank p-value
+  - survdiff: log-rank p-value
   
-    coxph: HRs, CIs, test stats
+  - coxph: HRs, CIs, test stats
     
 ### R-SURVIVAL (procedure)
   ```r
@@ -268,11 +268,11 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   ```
 ### R-SURVIVAL (limitations)
 
-    Diagnostics (e.g., proportional hazards via cox.zph) must be explicitly run and interpreted.
+  - Diagnostics (e.g., proportional hazards via cox.zph) must be explicitly run and interpreted.
   
-    Default handling of ties is Efron's method; Breslow available, but not default.
+  - Default handling of ties is Efron's method; Breslow available, but not default.
   
-    Formulas can become complex when many interactions or strata are involved.
+  - Formulas can become complex when many interactions or strata are involved.
   
 ## Python (LIFELINES)
 
@@ -280,23 +280,23 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
     - Use KaplanMeierFitter, logrank_test, and CoxPHFitter from the lifelines package.
   
   Inputs
-    Required:
+  - Required:
   
-      duration_col, event_col
+      - duration_col, event_col
   
-      Pandas DataFrame with covariates
+      - Pandas DataFrame with covariates
   
-    Optional:
+  - Optional:
   
-      robust, step_size, weights, formula
+      - robust, step_size, weights, formula
   
   Outputs (Python)
   
-    KM survival estimates
+  - KM survival estimates
   
-    Log-rank p-values
+  - Log-rank p-values
   
-    HRs, standard errors, confidence intervals
+  - HRs, standard errors, confidence intervals
 
 ### Python-LIFELINES (procedure)
   ```python
@@ -316,17 +316,17 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   
 ### Python-LIFELINES (limitations)
 
-    Assumption checking (e.g., proportional hazards) must be performed via .check_assumptions(); not automatic.
+  - Assumption checking (e.g., proportional hazards) must be performed via .check_assumptions(); not automatic.
   
-    Results may vary depending on tie-breaking method used (Efron, Breslow, or exact).
+  - Results may vary depending on tie-breaking method used (Efron, Breslow, or exact).
   
-    Does not support time-dependent covariates as robustly as R.
+  - Does not support time-dependent covariates as robustly as R.
   
-    Some plotting features require knowledge of Matplotlib.
+  - Some plotting features require knowledge of Matplotlib.
   
 # Summary
 
-> Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
+- Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
 
 # References
 
@@ -338,22 +338,22 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   - ICH E9 Guideline: Standardizes survival analysis approaches internationally.
     - https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf
 
-  SAS Documentation: Procedures PROC LIFETEST and PROC PHREG used in FDA-reviewed submissions. SAS Lifetest, SAS PHREG
+  - SAS Documentation: Procedures PROC LIFETEST and PROC PHREG used in FDA-reviewed submissions. SAS Lifetest, SAS PHREG
     - https://documentation.sas.com/doc/en/pgmsascdc/v_063/statug/statug_lifetest_overview.htm
 
-  R Survival Package: Official reference from CRAN, widely used in academic and industry publications. CRAN Survival
+  - R Survival Package: Official reference from CRAN, widely used in academic and industry publications. CRAN Survival
     - https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf
 
-  Python Lifelines Documentation: Supports accepted statistical methods for open-science usage. Lifelines Docs
+  - Python Lifelines Documentation: Supports accepted statistical methods for open-science usage. Lifelines Docs
     - https://lifelines.readthedocs.io/en/latest/
 
-  EMA Biostatistics Guidance: Endorses Cox and stratified log-rank for regulatory use.
+  - EMA Biostatistics Guidance: Endorses Cox and stratified log-rank for regulatory use.
     - https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-adjustment-covariates-randomised-clinical-trials_en.pdf
 
 **Notes and SOPs**
 
-    UCLA SAS Survival Seminar: https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
+  - UCLA SAS Survival Seminar: https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
 
-    UC Davis Cox Model Presentation: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/cph-model-presentation.pdf
+  - UC Davis Cox Model Presentation: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/cph-model-presentation.pdf
 
-    FDA ICH E9 Statistical Principles: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9-statistical-principles-clinical-trials
+  - FDA ICH E9 Statistical Principles: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9-statistical-principles-clinical-trials
