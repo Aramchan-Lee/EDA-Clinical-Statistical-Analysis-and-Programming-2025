@@ -5,7 +5,6 @@
 
 - [0100 - OneSampleTTest - Requirements Analysis](#0900---Kaplan-Meier Log-rank test and Cox-PH---Requirements-Analysis)
 - [Background](#background)
-  - [Description](#description)
   - [Hypotheses](#hypotheses)
   - [Assumptions](#assumptions)
   - [Test Statistic & P-value](#test-statistic--p-value)
