@@ -3,7 +3,7 @@
 
 ---
 
-- [[0900] Kaplan-Meier Log-rank test and Cox-PH - Requirements Analysis](#0900---Kaplan-Meier Log-rank test and Cox-PH---Requirements-Analysis)
+- [0900 Kaplan-Meier Log-rank test and Cox-PH - Requirements Analysis](#0900---Kaplan-Meier Log-rank test and Cox-PH---Requirements-Analysis)
 - [Background](#background)
   - [Hypotheses](#hypotheses)
   - [Assumptions](#assumptions)
