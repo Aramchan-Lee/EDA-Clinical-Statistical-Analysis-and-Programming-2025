@@ -326,7 +326,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   
 # Summary
 
-    Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
+> Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
 
 # References
 
