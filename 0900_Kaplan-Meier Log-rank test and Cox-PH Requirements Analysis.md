@@ -146,22 +146,22 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 ## SAS (lifetest)
   Function/Procedure 
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
-  
-  Inputs (Required):
+    
+  <ins>**Inputs (Required):</ins>
   
   - DATA= (input dataset), wide format
   
   - TIME statement for survival time and censoring
   
-  Inputs (Optional):
+  <ins>**Inputs (Optional):</ins>
   
   - STRATA= (for group comparison)
   
   - PLOTS= (e.g. survival)
   
   - TEST (equality test)
-  
-  Outputs: 
+
+  <ins>**Outputs:**</ins>
   
   - Kaplan-Meier curves
   
@@ -191,13 +191,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure
     - Use PROC PHREG from the SAS STAT module for Cox Proportional Hazards modeling.
   
-  Inputs (Required):
+  <ins>**Inputs (Required):</ins>
   
   - DATA= (input dataset), wide format
   
   - MODEL (time and censoring indicator, covariates)
   
-  Inputs (Optional):
+  <ins>**Inputs (Optional):</ins>
   
   - CLASS= (categorical predictors)
   
@@ -207,7 +207,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   
   - ID= (subject identifier)
   
-  Outputs:
+  <ins>**Outputs:**</ins>
   
   - Hazard ratios (HR)
   
@@ -237,17 +237,17 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure 
     - Use survfit(), survdiff(), and coxph() from the survival package.
   
-  Inputs (Required):
+  <ins>**Inputs (Required):</ins>
   
   - Surv(time, status) object
   
   - Formula input for groups/covariates
   
-  Inputs (Optional):
+  <ins>**Inputs (Optional):</ins>
   
   - cluster, weights, ties, na.action
   
-  Outputs:
+  <ins>**Outputs:**</ins>
   
   - survfit: KM estimates
   
@@ -276,17 +276,17 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure
     - Use KaplanMeierFitter, logrank_test, and CoxPHFitter from the lifelines package.
   
-  Inputs (Required):
+  <ins>**Inputs (Required):</ins>
   
   - duration_col, event_col
   
   - Pandas DataFrame with covariates
   
-  Inputs (Optional):
+  <ins>**Inputs (Optional):</ins>
   
   - robust, step_size, weights, formula
   
-  Outputs:
+  <ins>**Outputs:**</ins>
   
   - KM survival estimates
   
