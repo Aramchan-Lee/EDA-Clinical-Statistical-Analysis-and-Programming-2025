@@ -4,10 +4,8 @@
 ---
 
 - [Background](#background)
-  - [Description](#description)
   - [Hypotheses](#hypotheses)
   - [Assumptions](#assumptions)
-- [Scope](#scope)
   - [Test Statistic & P-value](#test-statistic--p-value)
 - [Package Implementations](#package-implementations)
   - [SAS (PHREG)](#sas-phreg)
