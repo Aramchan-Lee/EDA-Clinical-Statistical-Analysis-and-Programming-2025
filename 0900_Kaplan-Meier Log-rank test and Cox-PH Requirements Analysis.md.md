@@ -45,53 +45,53 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 Log-rank test:
 
-  H₀: Survival functions are equal across groups.
+    H₀: Survival functions are equal across groups.
 
-  H₁: At least one group differs.
+    H₁: At least one group differs.
 
 Cox-PH:
 
-  H₀: Hazard ratio for each covariate = 1 (no effect).
+    H₀: Hazard ratio for each covariate = 1 (no effect).
 
-  H₁: At least one covariate has HR ≠ 1.
+    H₁: At least one covariate has HR ≠ 1.
   
 ## Assumptions
 
-Kaplan-Meier (KM)
+**Kaplan-Meier (KM)**
 
-  Independent censoring: Censored subjects are assumed to have the same survival prospects as those who remain under observation.
+    Independent censoring: Censored subjects are assumed to have the same survival prospects as those who remain under observation.
 
-  Non-informative censoring: Censoring is unrelated to the event risk.
+    Non-informative censoring: Censoring is unrelated to the event risk.
 
-  Exact event times: Event times are known and measured without error.
+    Exact event times: Event times are known and measured without error.
 
-  Random sampling: Subjects are representative of the population of interest.
+    Random sampling: Subjects are representative of the population of interest.
 
-Log-Rank Test
+**Log-Rank Test**
 
-  Proportional hazards: Hazard ratios between groups are constant over time.
+    Proportional hazards: Hazard ratios between groups are constant over time.
 
-  Independent censoring: Same as in KM.
+    Independent censoring: Same as in KM.
+  
+    Independent survival times: Between individuals and across groups.
 
-  Independent survival times: Between individuals and across groups.
+    Correct group assignment: Every individual belongs to one (and only one) group.
 
-  Correct group assignment: Every individual belongs to one (and only one) group.
+**Cox Proportional Hazards (Cox-PH)**
 
-Cox Proportional Hazards (Cox-PH)
+    Proportional hazards: The hazard ratio between individuals is constant over time.
 
-  Proportional hazards: The hazard ratio between individuals is constant over time.
+    Linearity of covariates in log-hazard: The effect of continuous variables is linear on the log hazard scale.
 
-  Linearity of covariates in log-hazard: The effect of continuous variables is linear on the log hazard scale.
+    Independent survival times: Survival times are independent between individuals.
 
-  Independent survival times: Survival times are independent between individuals.
+    Independent censoring: Censoring is unrelated to survival probability.
 
-  Independent censoring: Censoring is unrelated to survival probability.
-
-  No omitted confounders: All relevant predictors are included in the model (not formally testable but crucial for valid inference).
+    No omitted confounders: All relevant predictors are included in the model (not formally testable but crucial for valid inference).
 
 ## Test Statistic & P-value
 
-Kaplan-Meier (KM):
+**Kaplan-Meier (KM):**
 
   The Kaplan-Meier survival estimate at time t is:
 
@@ -107,7 +107,7 @@ Kaplan-Meier (KM):
 
       Var[S(t)] ≈ S(t)² × sum over tᵢ ≤ t of [dᵢ / (nᵢ × (nᵢ - dᵢ))]
 
-Log-rank Test:
+**Log-rank Test:**
 
   The test statistic is:
 
@@ -123,7 +123,7 @@ Log-rank Test:
 
     Q follows a chi-squared distribution with degrees of freedom = (number of groups - 1)
 
-Cox Proportional Hazards (Cox-PH):
+**Cox Proportional Hazards (Cox-PH):**
 
   The partial likelihood for estimating regression coefficients:
 
@@ -184,13 +184,13 @@ SAS (lifetest)
   ```
 
 ### SAS-lifetest (limitations)
-  No built-in test for proportional hazards; requires user-driven diagnostic procedures.
+    No built-in test for proportional hazards; requires user-driven diagnostic procedures.
 
-  Default method for handling ties is Efron's, which differs from some R/Python defaults.
+    Default method for handling ties is Efron's, which differs from some R/Python defaults.
 
-  Cannot handle time-varying covariates without macro extensions.
+    Cannot handle time-varying covariates without macro extensions.
 
-  Limited support for custom baseline hazard specification.
+    Limited support for custom baseline hazard specification.
 
 ## SAS (PHREG)    
 SAS (PHREG)
@@ -234,11 +234,11 @@ SAS (PHREG)
 
 ### SAS-PHREG (limitations)  
   
-  Cannot incorporate covariates—limited to stratified or grouped comparisons.
+    Cannot incorporate covariates—limited to stratified or grouped comparisons.
   
-  Output can be verbose and require manual post-processing for reporting.
+    Output can be verbose and require manual post-processing for reporting.
   
-  Graphical outputs depend on enabling ODS graphics manually.
+    Graphical outputs depend on enabling ODS graphics manually.
   
 ## R (SURVIVAL)
 R (SURVIVAL)
@@ -275,11 +275,11 @@ R (SURVIVAL)
   ```
 ### R-SURVIVAL (limitations)
 
-  Diagnostics (e.g., proportional hazards via cox.zph) must be explicitly run and interpreted.
+    Diagnostics (e.g., proportional hazards via cox.zph) must be explicitly run and interpreted.
   
-  Default handling of ties is Efron's method; Breslow available, but not default.
+    Default handling of ties is Efron's method; Breslow available, but not default.
   
-  Formulas can become complex when many interactions or strata are involved.
+    Formulas can become complex when many interactions or strata are involved.
   
 ## Python (LIFELINES)
 Python (LIFELINES)
@@ -324,44 +324,44 @@ Python (LIFELINES)
   
 ### Python-LIFELINES (limitations)
 
-  Assumption checking (e.g., proportional hazards) must be performed via .check_assumptions(); not automatic.
+    Assumption checking (e.g., proportional hazards) must be performed via .check_assumptions(); not automatic.
   
-  Results may vary depending on tie-breaking method used (Efron, Breslow, or exact).
+    Results may vary depending on tie-breaking method used (Efron, Breslow, or exact).
   
-  Does not support time-dependent covariates as robustly as R.
+    Does not support time-dependent covariates as robustly as R.
   
-  Some plotting features require knowledge of Matplotlib.
-
+    Some plotting features require knowledge of Matplotlib.
+  
 # Summary
 
-Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
+    Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational tools in survival analysis, each suited to different analytic needs. Kaplan-Meier provides non-parametric survival estimates, Log-rank tests detect differences between survival curves, and Cox-PH models estimate the impact of covariates on time-to-event outcomes under the proportional hazards assumption. These methods are supported in validated statistical packages (SAS, R, Python) and widely accepted in regulatory settings, with varying strengths and limitations in implementation, flexibility, and diagnostics.
 
 # References
 
 **Regulatory and Industry References**
 
-  FDA Statistical Guidance for Clinical Trials: Discusses statistical principles in clinical trials; includes KM and Cox-PH.
+    FDA Statistical Guidance for Clinical Trials: Discusses statistical principles in clinical trials; includes KM and Cox-PH.
     - https://www.fda.gov/media/71145/download
 
-  ICH E9 Guideline: Standardizes survival analysis approaches internationally.
+    ICH E9 Guideline: Standardizes survival analysis approaches internationally.
     - https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf
 
-  SAS Documentation: Procedures PROC LIFETEST and PROC PHREG used in FDA-reviewed submissions. SAS Lifetest, SAS PHREG
+    SAS Documentation: Procedures PROC LIFETEST and PROC PHREG used in FDA-reviewed submissions. SAS Lifetest, SAS PHREG
     - https://documentation.sas.com/doc/en/pgmsascdc/v_063/statug/statug_lifetest_overview.htm
 
-  R Survival Package: Official reference from CRAN, widely used in academic and industry publications. CRAN Survival
+    R Survival Package: Official reference from CRAN, widely used in academic and industry publications. CRAN Survival
     - https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf
 
-  Python Lifelines Documentation: Supports accepted statistical methods for open-science usage. Lifelines Docs
+    Python Lifelines Documentation: Supports accepted statistical methods for open-science usage. Lifelines Docs
     - https://lifelines.readthedocs.io/en/latest/
 
-  EMA Biostatistics Guidance: Endorses Cox and stratified log-rank for regulatory use.
+    EMA Biostatistics Guidance: Endorses Cox and stratified log-rank for regulatory use.
     - https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-adjustment-covariates-randomised-clinical-trials_en.pdf
 
 **Notes and SOPs**
 
-  UCLA SAS Survival Seminar: https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
+    UCLA SAS Survival Seminar: https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
 
-  UC Davis Cox Model Presentation: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/cph-model-presentation.pdf
+    UC Davis Cox Model Presentation: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/cph-model-presentation.pdf
 
-  FDA ICH E9 Statistical Principles: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9-statistical-principles-clinical-trials
+    FDA ICH E9 Statistical Principles: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9-statistical-principles-clinical-trials
