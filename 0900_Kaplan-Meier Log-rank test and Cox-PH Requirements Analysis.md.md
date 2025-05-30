@@ -147,14 +147,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure 
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
   
-  Inputs 
-  Required:
+  Inputs (Required):
   
   - DATA= (input dataset), wide format
   
   - TIME statement for survival time and censoring
   
-  Optional:
+  Inputs (Optional):
   
   - STRATA= (for group comparison)
   
@@ -162,7 +161,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   
   - TEST (equality test)
   
-  Outputs 
+  Outputs: 
   
   - Kaplan-Meier curves
   
@@ -192,14 +191,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure
     - Use PROC PHREG from the SAS STAT module for Cox Proportional Hazards modeling.
   
-  Inputs 
-  Required:
+  Inputs (Required):
   
   - DATA= (input dataset), wide format
   
   - MODEL (time and censoring indicator, covariates)
   
-  Optional:
+  Inputs (Optional):
   
   - CLASS= (categorical predictors)
   
@@ -209,7 +207,7 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   
   - ID= (subject identifier)
   
-  Outputs
+  Outputs:
   
   - Hazard ratios (HR)
   
@@ -239,18 +237,17 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure 
     - Use survfit(), survdiff(), and coxph() from the survival package.
   
-  Inputs
-  Required:
+  Inputs (Required):
   
   - Surv(time, status) object
   
   - Formula input for groups/covariates
   
-  Optional:
+  Inputs (Optional):
   
   - cluster, weights, ties, na.action
   
-  Outputs 
+  Outputs:
   
   - survfit: KM estimates
   
@@ -279,18 +276,17 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure
     - Use KaplanMeierFitter, logrank_test, and CoxPHFitter from the lifelines package.
   
-  Inputs
-  - Required:
+  Inputs (Required):
   
-      - duration_col, event_col
+  - duration_col, event_col
   
-      - Pandas DataFrame with covariates
+  - Pandas DataFrame with covariates
   
-  - Optional:
+  Inputs (Optional):
   
-      - robust, step_size, weights, formula
+  - robust, step_size, weights, formula
   
-  Outputs (Python)
+  Outputs:
   
   - KM survival estimates
   
