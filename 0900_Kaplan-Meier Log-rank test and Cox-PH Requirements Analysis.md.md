@@ -43,13 +43,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 ## Hypotheses
 
-Log-rank test:
+<ins>**Log-rank test:**</ins>
 
     H₀: Survival functions are equal across groups.
 
     H₁: At least one group differs.
 
-Cox-PH:
+<ins>**Cox-PH:**</ins>
 
     H₀: Hazard ratio for each covariate = 1 (no effect).
 
