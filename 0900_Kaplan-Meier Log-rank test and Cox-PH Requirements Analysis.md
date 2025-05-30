@@ -147,13 +147,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure 
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
     
-  <ins>**Inputs (Required):</ins>
+  <ins>**Inputs (Required):**</ins>
   
   - DATA= (input dataset), wide format
   
   - TIME statement for survival time and censoring
   
-  <ins>**Inputs (Optional):</ins>
+  <ins>**Inputs (Optional)**:</ins>
   
   - STRATA= (for group comparison)
   
@@ -191,13 +191,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure
     - Use PROC PHREG from the SAS STAT module for Cox Proportional Hazards modeling.
   
-  <ins>**Inputs (Required):</ins>
+  <ins>**Inputs (Required):**</ins>
   
   - DATA= (input dataset), wide format
   
   - MODEL (time and censoring indicator, covariates)
   
-  <ins>**Inputs (Optional):</ins>
+  <ins>**Inputs (Optional):**</ins>
   
   - CLASS= (categorical predictors)
   
@@ -237,13 +237,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure 
     - Use survfit(), survdiff(), and coxph() from the survival package.
   
-  <ins>**Inputs (Required):</ins>
+  <ins>**Inputs (Required):**</ins>
   
   - Surv(time, status) object
   
   - Formula input for groups/covariates
   
-  <ins>**Inputs (Optional):</ins>
+  <ins>**Inputs (Optional):**</ins>
   
   - cluster, weights, ties, na.action
   
@@ -276,13 +276,13 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
   Function/Procedure
     - Use KaplanMeierFitter, logrank_test, and CoxPHFitter from the lifelines package.
   
-  <ins>**Inputs (Required):</ins>
+  <ins>**Inputs (Required):**</ins>
   
   - duration_col, event_col
   
   - Pandas DataFrame with covariates
   
-  <ins>**Inputs (Optional):</ins>
+  <ins>**Inputs (Optional):**</ins>
   
   - robust, step_size, weights, formula
   
