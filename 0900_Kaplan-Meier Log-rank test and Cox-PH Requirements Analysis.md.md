@@ -332,10 +332,10 @@ These methods are widely used in clinical trials, epidemiology, engineering, and
 
 **Regulatory and Industry References**
 
-  > FDA Statistical Guidance for Clinical Trials: Discusses statistical principles in clinical trials; includes KM and Cox-PH.
+  - FDA Statistical Guidance for Clinical Trials: Discusses statistical principles in clinical trials; includes KM and Cox-PH.
     - https://www.fda.gov/media/71145/download
 
-  ICH E9 Guideline: Standardizes survival analysis approaches internationally.
+  - ICH E9 Guideline: Standardizes survival analysis approaches internationally.
     - https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf
 
   SAS Documentation: Procedures PROC LIFETEST and PROC PHREG used in FDA-reviewed submissions. SAS Lifetest, SAS PHREG
