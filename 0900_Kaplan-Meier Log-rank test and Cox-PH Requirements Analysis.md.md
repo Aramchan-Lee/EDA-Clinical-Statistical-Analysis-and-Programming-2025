@@ -9,11 +9,11 @@
   - [Test Statistic & P-value](#test-statistic--p-value)
 - [Package Implementations](#package-implementations)
   - [SAS (LIFETEST)](#sas-lifetest)
-    - [Function/Procedure (SAS)](#functionprocedure-sas)
-    - [Inputs (SAS)](#inputs-sas)
-    - [Outputs (SAS)](#outputs-sas)
-    - [Sample Code (SAS)](#sample-code-sas)
-    - [Limitations/Notes (SAS)](#limitationsnotes-sas)
+    - [Function/Procedure (SAS)](#functionprocedure-life)
+    - [Inputs (SAS)](#inputs-life)
+    - [Outputs (SAS)](#outputs-life)
+    - [Sample Code (SAS)](#sample-code-life)
+    - [Limitations/Notes (SAS)](#limitationsnotes-life)
   - [SAS (PHREG)](#sas-phreg)
     - [Function/Procedure (SAS)](#functionprocedure-sas)
     - [Inputs (SAS)](#inputs-sas)
@@ -159,8 +159,8 @@ Cox Proportional Hazards (Cox-PH):
 
 # Package Implementations
 
-## SAS (LIFETEST)
-SAS (LIFETEST)
+## SAS (lifetest)
+SAS (lifetest)
   Function/Procedure 
     - Use PROC LIFETEST for Kaplan-Meier survival curves and log-rank test.
   
@@ -187,7 +187,7 @@ SAS (LIFETEST)
   
     Median survival & CI
 
-### SAS-LIFETEST (procedure)
+### SAS-lifetest (procedure)
   ```sas
   proc lifetest data=study plots=survival;
     time time*status(0);
@@ -195,7 +195,7 @@ SAS (LIFETEST)
   run;
   ```
 
-### SAS-LIFETEST (limitations)
+### SAS-lifetest (limitations)
   No built-in test for proportional hazards; requires user-driven diagnostic procedures.
 
   Default method for handling ties is Efron's, which differs from some R/Python defaults.
