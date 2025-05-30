@@ -10,7 +10,7 @@
 - [Package Implementations](#package-implementations)
   - [SAS (LIFETEST)](#sas-lifetest)
     - [Function/Procedure (SAS)](#functionprocedure-life)
-    - [Sample Code (SAS)](#sample-code-life)
+    - [Sample Code (SAS)](#SAS-lifetest (procedure))
     - [Limitations/Notes (SAS)](#limitationsnotes-life)
   - [SAS (PHREG)](#sas-phreg)
     - [Function/Procedure (SAS)](#functionprocedure-sas)
@@ -342,7 +342,7 @@ Kaplan-Meier, Log-rank, and Cox Proportional Hazards (Cox-PH) are foundational t
 
 # References
 
-Regulatory and Industry References
+**Regulatory and Industry References**
 
   FDA Statistical Guidance for Clinical Trials: Discusses statistical principles in clinical trials; includes KM and Cox-PH.
     - https://www.fda.gov/media/71145/download
@@ -362,7 +362,7 @@ Regulatory and Industry References
   EMA Biostatistics Guidance: Endorses Cox and stratified log-rank for regulatory use.
     - https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-adjustment-covariates-randomised-clinical-trials_en.pdf
 
-Notes and SOPs
+**Notes and SOPs**
 
   UCLA SAS Survival Seminar: https://stats.oarc.ucla.edu/sas/seminars/sas-survival/
 
